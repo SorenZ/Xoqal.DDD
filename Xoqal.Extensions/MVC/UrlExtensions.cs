@@ -3,9 +3,9 @@
 namespace Xoqal.Extensions.MVC
 {
     /// <summary>
-    /// Provide some helpers method toward of URL.
+    /// Provide some helpers extensions method toward of URL.
     /// </summary>
-    public static class UrlHelper
+    public static class UrlExtensions
     {
         private static readonly Regex Feet = new Regex(@"([0-9]\s?)'([^'])", RegexOptions.Compiled);
         private static readonly Regex Inch1 = new Regex(@"([0-9]\s?)''", RegexOptions.Compiled);
@@ -25,28 +25,27 @@ namespace Xoqal.Extensions.MVC
         /// <param name="rawUrl"></param>
         /// <returns></returns>
         /// <remarks>Persian characters included.</remarks>
-        public static string GetReadableEncodedUrl(string rawUrl)
+        public static string GetReadableEncodedUrl(this string rawUrl)
         {
-            if (!string.IsNullOrEmpty(rawUrl))
-            {
-                rawUrl = rawUrl.Trim().ToLower();
-                rawUrl = rawUrl.Replace("&", "and");
+            if (string.IsNullOrWhiteSpace(rawUrl)) return rawUrl;
 
-                rawUrl = Feet.Replace(rawUrl, "$1-ft-");
-                rawUrl = Inch1.Replace(rawUrl, "$1-in-");
-                rawUrl = Inch2.Replace(rawUrl, "$1-in-");
-                rawUrl = Num.Replace(rawUrl, "num-$1");
+            rawUrl = rawUrl.Trim().ToLower();
+            rawUrl = rawUrl.Replace("&", "and");
 
-                rawUrl = Dollar.Replace(rawUrl, "$1-dollar-");
-                rawUrl = Percent.Replace(rawUrl, "$1-percent-");
+            rawUrl = Feet.Replace(rawUrl, "$1-ft-");
+            rawUrl = Inch1.Replace(rawUrl, "$1-in-");
+            rawUrl = Inch2.Replace(rawUrl, "$1-in-");
+            rawUrl = Num.Replace(rawUrl, "num-$1");
 
-                rawUrl = Sep.Replace(rawUrl, "-");
+            rawUrl = Dollar.Replace(rawUrl, "$1-dollar-");
+            rawUrl = Percent.Replace(rawUrl, "$1-percent-");
 
-                rawUrl = Empty.Replace(rawUrl, string.Empty);
-                rawUrl = Extra.Replace(rawUrl, "-");
+            rawUrl = Sep.Replace(rawUrl, "-");
 
-                rawUrl = rawUrl.Trim('-');
-            }
+            rawUrl = Empty.Replace(rawUrl, string.Empty);
+            rawUrl = Extra.Replace(rawUrl, "-");
+
+            rawUrl = rawUrl.Trim('-');
 
             return rawUrl;
         }

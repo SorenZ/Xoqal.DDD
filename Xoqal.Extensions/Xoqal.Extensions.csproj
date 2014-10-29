@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Linq\QueryExtensions.cs" />
-    <Compile Include="MVC\UrlHelper.cs" />
+    <Compile Include="MVC\UrlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
