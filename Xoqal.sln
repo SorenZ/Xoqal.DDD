@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Extensions", "Xoqal.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Helpers", "Xoqal.Helpers\Xoqal.Helpers.csproj", "{C02BCB4D-C985-45AF-8D7C-F943DBF82875}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{19C81BF7-2781-44E1-9B4C-C382537FAFC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{09AB3C1E-68F2-40D2-8679-2010584B1EF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5B676367-6221-4B6A-8B2C-C76A5D048DBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1E529613-1ED4-402A-8E64-B061EBDA9556}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
