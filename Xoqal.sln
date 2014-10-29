@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Extensions", "Xoqal.Extensions\Xoqal.Extensions.csproj", "{CAA92F60-646C-4EAE-A048-DD5DEBBC21A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Extensions", "src\Xoqal.Extensions\Xoqal.Extensions.csproj", "{CAA92F60-646C-4EAE-A048-DD5DEBBC21A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Helpers", "Xoqal.Helpers\Xoqal.Helpers.csproj", "{C02BCB4D-C985-45AF-8D7C-F943DBF82875}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Helpers", "src\Xoqal.Helpers\Xoqal.Helpers.csproj", "{C02BCB4D-C985-45AF-8D7C-F943DBF82875}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{19C81BF7-2781-44E1-9B4C-C382537FAFC8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", ".nuget", "{19C81BF7-2781-44E1-9B4C-C382537FAFC8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{09AB3C1E-68F2-40D2-8679-2010584B1EF4}"
 EndProject
@@ -32,5 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CAA92F60-646C-4EAE-A048-DD5DEBBC21A2} = {5B676367-6221-4B6A-8B2C-C76A5D048DBE}
+		{C02BCB4D-C985-45AF-8D7C-F943DBF82875} = {5B676367-6221-4B6A-8B2C-C76A5D048DBE}
 	EndGlobalSection
 EndGlobal
