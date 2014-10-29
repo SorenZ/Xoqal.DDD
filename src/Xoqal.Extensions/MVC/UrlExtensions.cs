@@ -5,7 +5,7 @@ namespace Xoqal.Extensions.MVC
     /// <summary>
     /// Provide some helpers extensions method toward of URL.
     /// </summary>
-    public static class UrlExtensions
+    public static class UrlExtension
     {
         private static readonly Regex Feet = new Regex(@"([0-9]\s?)'([^'])", RegexOptions.Compiled);
         private static readonly Regex Inch1 = new Regex(@"([0-9]\s?)''", RegexOptions.Compiled);

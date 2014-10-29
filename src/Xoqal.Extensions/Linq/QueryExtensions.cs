@@ -7,7 +7,7 @@ namespace Xoqal.Extensions.Linq
     /// <summary>
     /// IQueryable Helpers
     /// </summary>
-    public static class QueryExtensions
+    public static class QueryableExtension
     {
         /// <summary>
         /// 'Select' by condition before query executed in provider.
