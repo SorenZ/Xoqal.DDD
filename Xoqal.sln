@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1E529613
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Globalization", "src\Xoqal.Globalization\Xoqal.Globalization.csproj", "{5F468A52-DC6D-43EE-B287-A31867A21BA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xoqal.Core", "src\Xoqal.Core\Xoqal.Core.csproj", "{31E2BFDC-C959-42B7-8161-1599811E4EDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{5F468A52-DC6D-43EE-B287-A31867A21BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F468A52-DC6D-43EE-B287-A31867A21BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F468A52-DC6D-43EE-B287-A31867A21BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E2BFDC-C959-42B7-8161-1599811E4EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E2BFDC-C959-42B7-8161-1599811E4EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E2BFDC-C959-42B7-8161-1599811E4EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E2BFDC-C959-42B7-8161-1599811E4EDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{CAA92F60-646C-4EAE-A048-DD5DEBBC21A2} = {5B676367-6221-4B6A-8B2C-C76A5D048DBE}
 		{C02BCB4D-C985-45AF-8D7C-F943DBF82875} = {5B676367-6221-4B6A-8B2C-C76A5D048DBE}
 		{5F468A52-DC6D-43EE-B287-A31867A21BA8} = {5B676367-6221-4B6A-8B2C-C76A5D048DBE}
+		{31E2BFDC-C959-42B7-8161-1599811E4EDC} = {5B676367-6221-4B6A-8B2C-C76A5D048DBE}
 	EndGlobalSection
 EndGlobal
