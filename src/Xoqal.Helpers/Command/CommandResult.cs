@@ -4,8 +4,8 @@ using System.Runtime.Serialization;
 namespace Xoqal.Helpers.Command
 {
     /// <summary>
-    /// provides Command result data structure
-    /// it can be used as WebApi result to
+    /// Represent Command result data structure
+    /// It can be used as web service result
     /// </summary>
     /// <remarks>result for void command</remarks>
     [DataContract]

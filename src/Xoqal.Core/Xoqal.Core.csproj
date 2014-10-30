@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\GuidAggregate.cs" />
+    <Compile Include="Models\GuidEntity.cs" />
     <Compile Include="Models\IAggregate.cs" />
     <Compile Include="Models\IAggregateRoot.cs" />
     <Compile Include="Models\IEntity.cs" />
