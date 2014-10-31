@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Xoqal.Extensions.MVC
+namespace Xoqal.Utilities.MVC
 {
     /// <summary>
     /// Provide some helpers extensions method toward of URL.

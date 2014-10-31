@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Xoqal.Helpers")]
+[assembly: AssemblyTitle("Xoqal.Utilities")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Xoqal.Helpers")]
+[assembly: AssemblyProduct("Xoqal.Utilities")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3409d9b8-acde-4aaf-870c-a573545f7973")]
+[assembly: Guid("8b9f0acc-b38d-44bb-9a35-5a16a1cb2be8")]
 
 // Version information for an assembly consists of the following four values:
 //

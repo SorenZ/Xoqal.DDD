@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Xoqal.Extensions.Linq
+namespace Xoqal.Utilities.Linq
 {
     /// <summary>
     /// IQueryable Helpers

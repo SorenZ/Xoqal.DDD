@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Xoqal.Helpers.Command
+namespace Xoqal.Core.Command
 {
     /// <summary>
     /// Represent Command result data structure
