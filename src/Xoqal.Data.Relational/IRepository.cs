@@ -9,13 +9,19 @@ namespace Xoqal.Data.Relational
     /// <summary>
     /// Represents a generic object repository.
     /// </summary>
-    public interface IRepository<TEntity, in TKey> where TEntity : IEntity<TKey>
+    public interface IRepository<TAggregate, in TKey> where TAggregate : IAggregate<TKey>
     {
+
+        /// <summary>
+        /// Gets the query.
+        /// </summary>
+        IQueryable<TAggregate> Query { get; }
+
         /// <summary>
         /// Gets all items.
         /// </summary>
         /// <returns> </returns>
-        IEnumerable<TEntity> GetAllItems();
+        IEnumerable<TAggregate> GetAllItems();
 
         /// <summary>
         /// Gets paginated items supporting sorting.
@@ -24,7 +30,7 @@ namespace Xoqal.Data.Relational
         /// <param name="itemCount"> The item count. </param>
         /// <param name="sortDescriptions"> The sort descriptions. </param>
         /// <returns> </returns>
-        IEnumerable<TEntity> GetItems(int startIndex, int itemCount, SortDescription[] sortDescriptions = null);
+        IEnumerable<TAggregate> GetItems(int startIndex, int itemCount, SortDescription[] sortDescriptions = null);
 
         /// <summary>
         /// Gets the item count.
@@ -36,39 +42,28 @@ namespace Xoqal.Data.Relational
         /// Gets an item by its key.
         /// </summary>
         /// <returns> </returns>
-        object GetItemByKey(TKey id);
+        TAggregate GetItemByKey(TKey id);
 
         /// <summary>
-        /// Adds the specified entity.
+        /// Adds the specified Aggregate.
         /// </summary>
-        /// <param name="entity"> The entity. </param>
-        void Add(TEntity entity);
+        /// <param name="aggregate"> The Aggregate. </param>
+        void Add(TAggregate aggregate);
 
         /// <summary>
-        /// Updates the specified entity.
+        /// Updates the specified Aggregate.
         /// </summary>
-        /// <param name="entity"> The entity. </param>
-        void Update(TEntity entity);
+        /// <param name="aggregate"> The Aggregate. </param>
+        void Update(TAggregate aggregate);
 
         /// <summary>
-        /// Removes the specified entity.
+        /// Removes the specified Aggregate.
         /// </summary>
-        /// <param name="entity"> The entity. </param>
-        void Remove(TEntity entity);
-
-        void InsertRange(IEnumerable<TEntity> entities);
-
-        void InsertOrUpdateGraph(TEntity entity);
-
-        void InsertGraphRange(IEnumerable<TEntity> entities);
+        /// <param name="aggregate"> The Aggregate. </param>
+        void Remove(TAggregate aggregate);
 
         void Delete(TKey id);
 
-        void Delete(TEntity entity);
-
-        /// <summary>
-        /// Gets the query.
-        /// </summary>
-        IQueryable<TEntity> Query { get; }
+        void Delete(TAggregate aggregate);
     }
 }

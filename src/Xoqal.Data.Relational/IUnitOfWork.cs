@@ -9,7 +9,7 @@ namespace Xoqal.Data.Relational
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<TEntity, TKey> Repository<TEntity, TKey>() where TEntity : IEntity<TKey>;
+        IRepository<TAggregate, TKey> Repository<TAggregate, TKey>() where TAggregate : class, IAggregate<TKey>, new();
 
         /// <summary>
         /// Commits the works.
@@ -17,7 +17,7 @@ namespace Xoqal.Data.Relational
         void Commit();
 
         /// <summary>
-        /// Rolls the works.
+        /// rolebacks the works.
         /// </summary>
         void RollBack();
 
