@@ -50,7 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Linq\Extensions.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="Repository[TAggregate].cs" />
+    <Compile Include="Repository[TAggregate,TKey].cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,7 +15,8 @@ namespace Xoqal.Data.Relational.EF6
 
         private readonly DbContext _context;
 
-        public IRepository<TAggregate, TKey> Repository<TAggregate, TKey>() where TAggregate : class, IAggregate<TKey>, new()
+        public IRepository<TAggregate, TKey> Repository<TAggregate, TKey>() 
+            where TAggregate : class, IAggregate<TKey>, new()
         {
             return new Repository<TAggregate, TKey>(this._context);
         }

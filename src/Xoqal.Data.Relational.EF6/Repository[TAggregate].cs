@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,14 +9,10 @@ using Xoqal.Data.Relational.EF6.Linq;
 
 namespace Xoqal.Data.Relational.EF6
 {
-    public class Repository<TAggregate,TKey> : IRepository<TAggregate,TKey> where TAggregate : class, IAggregate<TKey>, new()
+    public class Repository<TAggregate> : IRepository<TAggregate>
+        where TAggregate : class, IAggregate, new()
     {
         private readonly DbContext _context;
-
-        //public Repository(UnitOfWork unitOfWork)
-        //{
-        //    this._context = unitOfWork.Context;
-        //}
 
         public Repository(DbContext context)
         {
@@ -48,11 +44,6 @@ namespace Xoqal.Data.Relational.EF6
             return this.Query.Count();
         }
 
-        public TAggregate GetItemByKey(TKey id)
-        {
-            return this.DbSet.FirstOrDefault(q => q.Id.Equals(id));
-        }
-
         public void Add(TAggregate aggregate)
         {
             this.DbSet.Add(aggregate);
@@ -64,7 +55,7 @@ namespace Xoqal.Data.Relational.EF6
 
             if (entry.State == EntityState.Detached)
                 this.DbSet.Attach(aggregate);
-            
+
             entry.State = EntityState.Modified;
         }
 
@@ -79,23 +70,14 @@ namespace Xoqal.Data.Relational.EF6
             }
 
             if (entry.State == EntityState.Detached)
-                this._context.Set<TAggregate>().Attach(aggregate);
+                this.DbSet.Attach(aggregate);
 
             this.DbSet.Remove(aggregate);
-        }
-
-        public void Delete(TKey id)
-        {
-            var entry = new TAggregate {Id = id};
-
-            this._context.Set<TAggregate>().Attach(entry);
-            this._context.Set<TAggregate>().Remove(entry);
         }
 
         public void Delete(TAggregate aggregate)
         {
             throw new NotImplementedException();
         }
-       
     }
 }

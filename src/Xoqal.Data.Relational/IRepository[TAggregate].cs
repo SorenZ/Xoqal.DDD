@@ -1,17 +1,16 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
-using Xoqal.Core.Models;
 using Xoqal.Core.Query;
 
 namespace Xoqal.Data.Relational
 {
     /// <summary>
-    /// Represents a generic object repository.
+    /// Represents a generic repository.
     /// </summary>
-    public interface IRepository<TAggregate, in TKey> where TAggregate : IAggregate<TKey>
+    /// <typeparam name="TAggregate"></typeparam>
+    public interface IRepository<TAggregate>
     {
-
         /// <summary>
         /// Gets the query.
         /// </summary>
@@ -39,31 +38,27 @@ namespace Xoqal.Data.Relational
         int GetItemCount();
 
         /// <summary>
-        /// Gets an item by its key.
+        /// Adds the specified aggregate.
         /// </summary>
-        /// <returns> </returns>
-        TAggregate GetItemByKey(TKey id);
-
-        /// <summary>
-        /// Adds the specified Aggregate.
-        /// </summary>
-        /// <param name="aggregate"> The Aggregate. </param>
+        /// <param name="aggregate"> The aggregate. </param>
         void Add(TAggregate aggregate);
 
         /// <summary>
         /// Updates the specified Aggregate.
         /// </summary>
-        /// <param name="aggregate"> The Aggregate. </param>
+        /// <param name="aggregate"> The aggregate. </param>
         void Update(TAggregate aggregate);
 
         /// <summary>
-        /// Removes the specified Aggregate.
+        /// Removes the specified aggregate.
         /// </summary>
         /// <param name="aggregate"> The Aggregate. </param>
         void Remove(TAggregate aggregate);
-
-        void Delete(TKey id);
-
+        
+        /// <summary>
+        /// delete entity permanently
+        /// </summary>
+        /// <param name="aggregate"></param>
         void Delete(TAggregate aggregate);
     }
 }
