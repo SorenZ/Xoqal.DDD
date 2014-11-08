@@ -18,6 +18,7 @@ namespace Xoqal.Core.Query
         public PaginatedCriteria()
         {
             this.PageSize = 10;
+            this.CurrentPage = 1;
         }
 
         /// <summary>
@@ -26,7 +27,7 @@ namespace Xoqal.Core.Query
         /// <remarks>
         /// Starts from 1.
         /// </remarks>
-        public int? Page { get; set; }
+        public int CurrentPage { get; set; }
 
         /// <summary>
         /// Gets or sets the page size.
@@ -46,10 +47,7 @@ namespace Xoqal.Core.Query
         /// </summary>
         public int StartIndex
         {
-            get
-            {
-                return ((this.Page.HasValue && this.Page > 0) ? this.Page.Value - 1 : 0) * this.PageSize;
-            }
+            get { return (this.CurrentPage - 1)*this.PageSize; }
         }
 
         /// <summary>
@@ -79,7 +77,7 @@ namespace Xoqal.Core.Query
                     return;
                 }
 
-                this.SortDescriptions = this.ParseSortExpression(value).ToArray();
+                this.SortDescriptions = ParseSortExpression(value).ToArray();
             }
         }
 
@@ -88,7 +86,7 @@ namespace Xoqal.Core.Query
         /// </summary>
         /// <param name="sortExpression"></param>
         /// <returns></returns>
-        private IEnumerable<SortDescription> ParseSortExpression(string sortExpression)
+        private static IEnumerable<SortDescription> ParseSortExpression(string sortExpression)
         {
             var sortExpressions = sortExpression.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var sort in sortExpressions)

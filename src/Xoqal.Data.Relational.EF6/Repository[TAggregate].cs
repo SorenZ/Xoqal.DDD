@@ -5,7 +5,7 @@ using System.Linq;
 
 using Xoqal.Core.Models;
 using Xoqal.Core.Query;
-using Xoqal.Data.Relational.EF6.Linq;
+using Xoqal.Data.Relational.EF6.Extensions;
 
 namespace Xoqal.Data.Relational.EF6
 {

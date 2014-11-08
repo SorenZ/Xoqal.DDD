@@ -6,12 +6,10 @@
     public interface IPaginatedCriteria : ICriteria
     {
         /// <summary>
-        /// Gets or sets the page number.
+        /// Gets or sets the current page.
         /// </summary>
-        /// <remarks>
-        /// Starts from 1.
-        /// </remarks>
-        int? Page { get; set; }
+        /// <value> The current page. </value>
+        int CurrentPage { get; set; }
 
         /// <summary>
         /// Gets or sets the page size.

@@ -1,13 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic;
-
 using Xoqal.Core.Query;
 
-namespace Xoqal.Data.Relational.EF6.Linq
+namespace Xoqal.Data.Relational.EF6.Extensions
 {
-    public static class Extensions
+    public static class QueryableExtensions
     {
         /// <summary>
         /// Sorts the specified query.
@@ -131,8 +130,10 @@ namespace Xoqal.Data.Relational.EF6.Linq
         public static IPaginated<T> ToPaginated<T>(this IQueryable<T> query, IPaginatedCriteria paginatedCriteria)
         {
             return new Paginated<T>(
-                query.ToPage(paginatedCriteria.StartIndex, paginatedCriteria.PageSize, paginatedCriteria.SortDescriptions),
-                query.Count());
+                query.ToPage(paginatedCriteria.StartIndex, paginatedCriteria.PageSize,paginatedCriteria.SortDescriptions),
+                query.Count(),
+                paginatedCriteria.CurrentPage,
+                paginatedCriteria.PageSize);
         }
 
         /// <summary>
